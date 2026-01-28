@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+torch
+transformers
+pillow
+accelerate
+einops
+qwen-vl-utils
