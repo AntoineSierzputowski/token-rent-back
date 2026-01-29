@@ -8,7 +8,7 @@ class TextData(BaseModel):
     salary: float
 
 class CreateProfileRequest(BaseModel):
-    text_data: TextData
+    profile_data: TextData
     image1: str  # Base64 encoded ID image
     image2: str  # Base64 encoded Salary Slip image
 
