@@ -78,8 +78,27 @@ Send a `POST` request to `/create-profile` with the user's details and base64-en
 }
 ```
 
+### Create Real Estate
+Send a `POST` request to `/create-realestate` to add a property and calculate salary eligibility.
+
+```json
+{
+  "rent_price": 1000.0
+}
+```
+
+Response:
+```json
+{
+  "id": "abc12345",
+  "rent_price": 1000.0,
+  "minimum_salary_eligibility": 340.0
+}
+```
+
 ## Roadmap
 - [x] Database integration (MySQL)
 - [ ] Authentication & Authorization
 - [ ] Enhanced error handling and logging
 - [ ] Docker support
+- [ ] Document checking security
