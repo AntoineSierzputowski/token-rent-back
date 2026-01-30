@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from models.user import CreateProfileRequest, ProfileResponse, SuccessResponse
+from models.real_estate import CreateRealEstateRequest, RealEstateResponse
 from services.profile_service import profile_service
+from services.real_estate_service import real_estate_service
 from services.validation_service import validation_service
 
 router = APIRouter()
@@ -63,3 +65,11 @@ async def create_profile(request: CreateProfileRequest):
         "status": "success",
         "salary": extracted_salary
     }
+
+@router.post("/create-realestate", response_model=RealEstateResponse)
+def create_real_estate(request: CreateRealEstateRequest):
+    try:
+        result = real_estate_service.create_real_estate(request.rent_price)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to create real estate: {str(e)}")

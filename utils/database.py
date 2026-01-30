@@ -44,6 +44,12 @@ class MySQLDB:
                 date_of_birth DATE NOT NULL,
                 salary FLOAT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS real_estates (
+                id VARCHAR(255) PRIMARY KEY,
+                rent_price FLOAT NOT NULL,
+                minimum_salary_eligibility FLOAT NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         """)
         conn.commit()
